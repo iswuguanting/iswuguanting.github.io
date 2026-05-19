@@ -14,7 +14,7 @@
     function inheart(x, y, r) {
         // x^2+(y-(x^2)^(1/3))^2 = 1
         // http://www.wolframalpha.com/input/?i=x%5E2%2B%28y-%28x%5E2%29%5E%281%2F3%29%29%5E2+%3D+1
-        var z = ((x / r) * (x / r) + (y / r) * (y / r) - 1) * ((x / r) * (x / r) + (y / r) * (y / r) - 1) * ((x / r) * (x / r) + (y / r) * (y / r) - 1) - (x / r) * (x / r) * (y / r) * (y / r) * (y / r);
+        var z = ((x / r) * (x / r) + (y / r) * (y / r) - 1) * ((x / r) * (x / r) + (y / r) * (y / r) - 1) * ((x / r) * (x / r) + (y / r) * (y / r) - 1) - (x / r) * (x / r) * (y / r) * (y / r) * (y[...]
         return z < 0;
     }
 
@@ -76,7 +76,7 @@
         this.tree = tree;
 
         var scale = scale || 1
-        var color = color || '#FF0000';
+        var color = color || '#000000';
 
         this.heart = {
             point  : point,
@@ -164,7 +164,7 @@
             ctx.moveTo(0, 0);
     	    ctx.lineTo(15, 15);
     	    ctx.lineTo(60, 15);
-            ctx.stroke();
+             ctx.stroke();
 
             ctx.moveTo(0, 0);
             ctx.scale(0.75, 0.75);
@@ -199,7 +199,7 @@
             var len = this.length / 2;
 
             ctx.save();
-            ctx.strokeStyle = 'rgb(35, 31, 32)';
+            ctx.strokeStyle = 'rgb(0, 0, 0)';
             ctx.lineWidth = this.height;
             ctx.lineCap = 'round';
             ctx.lineJoin = 'round';
@@ -237,7 +237,7 @@
             var x = seed.x || this.width / 2;
             var y = seed.y || this.height / 2;
             var point = new Point(x, y);
-            var color = seed.color || '#FF0000';
+            var color = seed.color || '#000000';
             var scale = seed.scale || 1;
 
             this.seed = new Seed(this, point, scale, color);
@@ -457,8 +457,8 @@
             var ctx = s.tree.ctx;
             ctx.save();
         	ctx.beginPath();
-        	ctx.fillStyle = 'rgb(35, 31, 32)';
-            ctx.shadowColor = 'rgb(35, 31, 32)';
+        	ctx.fillStyle = 'rgb(0, 0, 0)';
+            ctx.shadowColor = 'rgb(0, 0, 0)';
             ctx.shadowBlur = 2;
         	ctx.moveTo(p.x, p.y);
         	ctx.arc(p.x, p.y, s.radius, 0, 2 * Math.PI);
